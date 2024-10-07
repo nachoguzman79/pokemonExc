@@ -41,18 +41,20 @@ function PokemonList() {
               <PokemonItem key={pokemon.name} url={pokemon.url} />
             ))}
           </div>
-
-          <button onClick={handleAnterior} disabled={!previous}>
-            Anterior
-          </button>
-          <button onClick={handleSiguiente}>Siguiente</button>
+          <div className="botones">
+            <button onClick={handleAnterior} disabled={!previous}>
+              Previous
+            </button>
+            <button onClick={handleSiguiente} disabled={!next}>
+              Next
+            </button>
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-// Componente adicional para manejar el renderizado de cada Pokémon
 function PokemonItem({ url }) {
   const [pokemonData, setPokemonData] = useState(null);
 
@@ -64,11 +66,13 @@ function PokemonItem({ url }) {
 
   return (
     <div className="pokemon-item">
-      {pokemonData && (
+      {pokemonData ? (
         <div>
           <h2>{pokemonData.name}</h2>
           <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
         </div>
+      ) : (
+        <p>Loading...</p>
       )}
     </div>
   );

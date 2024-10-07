@@ -18,4 +18,53 @@
     max-width: 100%; /* Asegurarse de que la imagen no sobrepase el contenedor */
     height: auto;
   }
+  .botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Alinear al centro verticalmente */
+    align-items: center; /* Alinear al centro horizontalmente */
+    height: 20vh; /* Ocupa toda la altura de la ventana */
+  }
+  
+  /* Estilos generales de los botones */
+  .botones button {
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color de texto blanco */
+    font-size: 1.2rem; /* Tamaño de texto */
+    padding: 10px 20px; /* Espaciado interior */
+    margin: 10px; /* Separación entre botones */
+    border: none; /* Eliminar borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Mostrar cursor de puntero */
+    transition: background-color 0.3s ease; /* Transición suave en hover */
+  }
+  
+  /* Estilos para hover */
+  .botones button:hover {
+    background-color: #0056b3; /* Cambiar color de fondo en hover */
+  }
+  
+  /* Estilos para botones deshabilitados */
+  .botones button:disabled {
+    background-color: #cccccc; /* Color gris para botón deshabilitado */
+    cursor: not-allowed; /* Cambiar cursor para botón deshabilitado */
+  }
+  
+
+.pokemon-item img {
+    max-width: 100%; /* Asegurarse de que la imagen no sobrepase el contenedor */
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .pokemon-container {
+        justify-content: center; /* Centra los elementos en pantallas pequeñas */
+    }
+
+    .pokemon-item {
+        width: 100%; /* Ocupa el 100% del contenedor en dispositivos móviles */
+        margin-bottom: 15px; /* Ajustar separación entre filas en móviles */
+    }
+}
+
   
